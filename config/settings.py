@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'member',
     'post',
-    'blog',
 ]
 
 # 추가

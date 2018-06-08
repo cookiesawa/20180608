@@ -24,23 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^post/', include('post.urls', namespace='post')),
     url(r'^member/', include('member.urls', namespace='member')),
-    url(r'^blog/', include('blog.urls', namespace='blog')),
-
-    url(r'^vaccine/', VaccineView.as_view(), name='vaccine'),
-    url(r'^hospital/', HospitalView.as_view(), name='hospital'),
-
-    url(r'^hospital_detail/', HospitalDetailView.as_view(), name='hospital_detail'),
-
-    url(r'^hospital_notice/', HospitalNoticeView.as_view(), name='hospital_notice'),
-    url(r'^hospital_reservation/', HospitalReservationView.as_view(), name='hospital_reservation'),
-
-    url(r'^diary/', DiaryView.as_view(), name='diary'),
-
-    url(r'^medical/', MedicalView.as_view(), name='medical'),
-
-    # url(r'^accounts/', include('allauth.urls')),
 ]
-
 
 
 urlpatterns += static(

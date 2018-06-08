@@ -1,21 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% load staticfiles %}
 
+{% block title %}1일1자랑{% endblock %}
 {% block content %}
+<div class="writebtn">
+<ol style="text-align: right"><a button type="button" class="btn btn-primary" href="{% url 'post:post_create' %}">작성하기</a></ol>
+</div>
 
-    <div class="index_container">
-        <a class="reservation" href="{% url 'hospital' %}"><div class="row2"> 병원예약하기 </div></a>
-        <a class="diary" href="{% url 'diary' %}"><div class="row1"> 다이어리 </div></a>
-        <a class="record" href="{% url 'medical' %}"><div class="row1"> 진료기록확인 </div></a>
-        <a class="vacc" href="{% url 'vaccine' %}"><div class="row2"> 예방접종/구충제 </div></a>
-        <a class="photo" href="{% url 'post:post_list' %}"><div class="row1"> 1일1자랑 </div></a>
-        <a class="tips" href="{% url 'blog:blog_list' %}"><div class="row1"> 꿀팁모음 </div></a>
-    </div>
+<div class="row">
+	{% for post in posts %}
+		<div id="post-{{ post.pk }}">
+			{% include 'include/post.html' with post_type='list' %}
 
+			<!-- 수정,삭제 넣으면 될 위치 -->
 
-    <div></div><br><div></div><br><div></div><br>
-
-    
-
-{% endblock content %}
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

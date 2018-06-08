@@ -1,114 +1,200 @@
-{% load static %}
-<!doctype html>
-<html lang="ko">
+
+
+<!DOCTYPE html>
+<html>
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1"/>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <!-- css 링크 순서 바꿨음 -->
-   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-   <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+    body:not(.glyphicon) {
+      font-family: "Helvetica Nenu", 'Nanum Gothic', Helvetica, Arial;
+    }
 
-   <link rel="stylesheet" type="text/css" href="{% static 'css/vaccine.css' %}" />
-   <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/hospital_reservation.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'css/hospital_notice.css' %}" /> -->
-   <link rel="stylesheet" type="text/css" href="{% static 'css/hospital_list.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'css/hospital_detail.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-   <script src="js/modernizr.custom.js"></script>
-   <script src="{% static 'js/jquery.min.js' %}"></script>
-   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-   <title>PETKAGE</title>
+    *:not(.glyphicon) {
+      font-family: "Helvetica Nenu", 'Nanum Gothic', Helvetica, Arial;
+    }
+    .navbar-nav {
+        float: right;
+        clear: both;
+        color: black;
+    }
+    .navbar-right {
+      display: flex;
+      padding-right: 20px;
+    }
+    * {
+      color: black !important
+    }
+    .easysLogo {
+      padding-left: 20px;
+      padding-top: 40px;
+    }
+    .navbar-fixed-top {
+      border-bottom: 1px solid black;
+      background-color: white;
+    }
+
+    .container{
+      position: absolute;
+      top:20%;
+      left:1%;
+    }
+    #one{
+      margin-left:38%;
+      width:280px;
+      height: 40px;
+      background-color:#959595;
+      color: white !important;
+      font-size: 17px;
+    }
+    .date{
+      text-align: right;
+      font-size: 15px;
+    }
+
+    .gif{
+      display: block;
+      margin-left:auto;
+      margin-right: auto;
+      width: 400px;
+    }
+
+    .content{
+      text-align: center;
+    }
+
+    .content2{
+      color: green !important;
+      font-weight: bold;
+
+    }
+
+    .content3{
+      color: red !important;
+      font-weight: bold;
+    }
+
+    .line{
+      position: absolute;
+      border-bottom: 1px solid black;
+      width:1263px;
+      left:-13px;
+
+    }
+    .title{
+
+    }
+
+    .red{
+      float:left;
+    }
+    .read{
+      float:left;
+    }
+    .rad{
+      float:left;
+    }
+    .footer{
+      list-style:none;
+    }
+    .footer1{
+      float: left;
+      list-style: none;
+    }
+    .footer2{
+      float: left;
+      list-style: none;
+      margin-left: 2%;
+    }
+    .footer3{
+      float: left;
+      list-style: none;
+      margin-left: 2%;
+    }
+    .footer4{
+      float: left;
+      list-style: none;
+      margin-left: 6%;
+    }
+    .footer5{
+      float: left;
+      list-style: none;
+      margin-left: 6%;
+    }
+    .footer6{
+      float: left;
+      list-style: none;
+      margin-left: 6%;
+    }
+        *:not(.glyphicon) {
+  font-family: 'NanumSquareRound', sans-serif !important;
+}
+  </style>
 </head>
 <body>
-   <nav class="top-nav navbar navbar-static-top navbar-default">
-      <div class="container">
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
-           <span class="sr-only">Toggle navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
-            <a href="{% url 'home' %}" class="navbar-brand" style="margin-top:15%; margin-bottom:15%; font-size:30px;">PETKAGE</a>
-         </div>
-            <ul class="nav navbar-nav navbar-right">
-               {% if user.is_authenticated %}
+  <div class="mymenu">
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="{% url 'post:post_list' %}" class="navbar-brand easysLogo">PETKAGE</a>
+			</div>
 
-               <div>
-                 <ul class="nav navbar-nav navbar-right">
-                   <li><a href="{% url 'member:logout' %}">로그아웃</a></li>
-                   <li><a href="#">마이페이지</a></li>
-                 </ul>
-               </div>
-               <div>
-               <ul class="nav navbar-nav">
-                  <li><a href="{% url 'hospital' %}">병원가기</a></li>
-                  <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">펫기록부<span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'medical' %}">진료기록</a></li>
-                        <li><a href="{% url 'vaccine' %}">예방접종/구충제</a></li>
-                        <li><a href="{% url 'diary' %}">다이어리</a></li>
-                     </ul>
-                  </li>
-                  <<li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">커뮤니티<span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'post:post_list' %}">1일1자랑</a></li>
-                        <li><a href="{% url 'blog:blog_list' %}">꿀팁모음</a></li>
-                     </ul>
-                  </li>
-               </ul>
-            </div>
-               {% else %}
-               <li><a href="{% url 'member:login' %}">로그인</a></li>
-               <li><a href="{% url 'member:signup' %}">회원가입</a></li>
-               {% endif %}
-            </ul>
-         </div>
-      </div>
-   </nav>
-   <div class="container">
-      {% if messages %}
-         {% for message in messages %}
-            <div class="alert-message alert
-               {% if message.tags == 'info' %}
-                  alert-info
-               {% elif message.tags == 'success' %}
-                  alert-success
-               {% elif message.tags == 'warning' %}
-                  alert-warning
-               {% elif message.tags == 'error' %}
-                  alert-danger
-               {% endif %}
-               ">{{ message }}</div>
-         {% endfor %}
-      {% endif %}
+      <ul class="nav nav-bar navbar-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
 
-      <h1>{% block title %}{% endblock %}</h1>
+				<ul class="nav navbar-nav">
+					<li><a href="#">병원가기</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">펫기록부<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">진료기록</a></li>
+							<li><a href="#">예방접종/구충제</a></li>
+							<li><a href="#">다이어리</a></li>
+						</ul>
+					</li>
+          <li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">커뮤니티<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">1일1자랑</a></li>
+							<li><a href="#">꿀팁모음</a></li>
+							<li><a href="#">다이어리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+  <!-- 본문은 여기야 여기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <div class="container">
+
+     <h1>{% block title %}{% endblock %}</h1>
 
       {% block content %}
+        {% endblock %}
 
-      {% endblock %}
-      <ul>
-         <hr style="border:1px solid #004071;">
-             <li class="footer2"><a href="#" style="color:#000;"><strong>고객지원</strong></a></li>
-            <li class="footer2"><a href="#" style="color:#000;"><strong>펫키지소개</strong></a></li>
-              <li class="footer2"><a href="#" style="color:#000;"><strong>사이트맵</strong></a></li>
-              <li class="footer3" style="color:#000;"><strong>문의</strong>&nbsp;&nbsp; help@petkage.co.kr</li>
-              <li class="footer2" style="color:#000;"><strong>주소</strong>&nbsp;&nbsp; help@petkage.co.kr</li>
-              <li class="footer2" style="color:#000;"><Strong>Copyright Petkage Corp. All rights reserved.</Strong></li>
-          </ul>
-          <br>
-          <div></div>
-          <br>
-   </div>
+  </div>
+
+  <!-- 본문 끝-->
+{% block footer %}
+   {% endblock footer %}
+
+
+
+
+
 </body>
 </html>

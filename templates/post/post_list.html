@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block title %}1일1자랑{% endblock %}
+{% block title %}<a href="{% url 'post:post_list' %}"> 1일1자랑</a>{% endblock %}
 {% block content %}
 <div class="writebtn">
 <ol style="text-align: right"><a button type="button" class="btn btn-primary" href="{% url 'post:post_create' %}">작성하기</a></ol>
@@ -17,4 +17,20 @@
 		</div>
 	{% endfor %}
 </div>
+
+
+
+
+  <br>
+  <ul class="footer">
+    <li><a href="#" class="footer1">고객지원</a></li>
+    <li><a href="#" class="footer2">펫키지소개</a></li>
+    <li><a href="#" class="footer3">사이트맵</a></li>
+    <li><a href="#" class="footer4">문의 help@petkage.co.kr</a></li>
+    <li><a href="#" class="footer5">주소     서울시 성동구 행당동 살곶이길 200</a></li>
+    <li><a href="#" class="footer6">Copyright Petkage Corp. All rights reserved.</a></li>
+  </ul>
+  <br>
+  <div></div>
+  <br>
 {% endblock %}

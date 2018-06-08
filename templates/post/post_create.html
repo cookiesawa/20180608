@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}1일1자랑{% endblock %}
+{% block title %}<a href="{% url 'post:post_list' %}" >1일1자랑</a>{% endblock %}
 {% block content %}
 <div class="post-create">
 	{% include 'include/form.html' with form=post_form submit_title='등록' enctype='file' %}

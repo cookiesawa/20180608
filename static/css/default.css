@@ -1,5 +1,7 @@
 /* General Blueprint Style */
-
+    *:not(.glyphicon) {
+  font-family: 'NanumSquareRound', sans-serif !important;
+}
 @font-face {
    font-family: 'fontawesome';
    src:url('../fonts/fontawesome.eot');

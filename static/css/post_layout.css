@@ -8,7 +8,9 @@
   width: 30px;
   /* padding: 1000px; */
 /*} *!*/
-
+    *:not(.glyphicon) {
+  font-family: 'NanumSquareRound', sans-serif !important;
+}
 
 .post-text {
 }

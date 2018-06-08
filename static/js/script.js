@@ -53,10 +53,10 @@ function kCalendar(id, date) {
 
 	var calendar = '';
 
-	calendar += '<div id="header">';
-	calendar += '			<span><a href="#" class="button left" onclick="kCalendar(\'' +  id + '\', \'' + prevDate + '\')"><</a></span>';
+	calendar += '<div id="header1">';
+	calendar += '			<span><a href="#" class="left" onclick="kCalendar(\'' +  id + '\', \'' + prevDate + '\')"><</a></span>';
 	calendar += '			<span id="date">' + currentYear + '년 ' + currentMonth + '월</span>';
-	calendar += '			<span><a href="#" class="button right" onclick="kCalendar(\'' + id + '\', \'' + nextDate + '\')">></a></span>';
+	calendar += '			<span><a href="#" class="right" onclick="kCalendar(\'' + id + '\', \'' + nextDate + '\')">></a></span>';
 	calendar += '		</div>';
 	calendar += '		<table border="0" cellspacing="0" cellpadding="0">';
 	calendar += '			<caption>' + currentYear + '년 ' + currentMonth + '월 달력</caption>';
